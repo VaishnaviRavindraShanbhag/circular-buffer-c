@@ -9,5 +9,5 @@ In cases where it is important to read every data written into the buffer:cleari
 
 Embedded Systems utilize circular buffer cause more often than not, these systems are in some way time dependent.
 
-This code practices clearing the buffer. It also accepts data = maxlen - 1, and uses this as a sure shot way to difffrenciate
+This code practices clearing the buffer. It also accepts data = maxlen - 1, and uses this as a sure shot way to diffrenciate
 between an empty and a full buffer.
