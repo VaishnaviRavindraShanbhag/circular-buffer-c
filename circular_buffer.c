@@ -1,14 +1,14 @@
 #include "circular_buffer.h"
 #include <stdio.h> 
 
-void circ_init(circ_buff_t *c, uint8_t *buffer, int maxlen)
+void circ_init(circ_buff_t *c, uint8_t *buffer, int maxlen)        //initialize the buffer 
 {
     c->buffer = buffer;
     c->head = 0;
     c->tail = 0;
     c->maxlen = maxlen;
 }
-int circ_bbuf_push(circ_buff_t *c,uint8_t data){
+int circ_bbuf_push(circ_buff_t *c,uint8_t data){                    // pushing data into the ring buffer 
     int next; 
     next = c-> head+1;
     if(next >= c-> maxlen)
@@ -19,7 +19,7 @@ int circ_bbuf_push(circ_buff_t *c,uint8_t data){
     c-> head = next; 
     return 0; 
 }
-int circ_bbuf_pop(circ_buff_t *c, uint8_t *data){
+int circ_bbuf_pop(circ_buff_t *c, uint8_t *data){                //popping data from the ring buffer 
     int next; 
     if (c -> head == c -> tail)
         return -1; 
